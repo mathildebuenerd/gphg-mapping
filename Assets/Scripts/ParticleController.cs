@@ -24,10 +24,6 @@ public class ParticleController : MonoBehaviour {
 
 
 	void Start() {
-		
-		List<GameObject> AllParticleSystems = new List<GameObject>();
-		AllParticleSystems.Add (ParticleSystem0);
-		Debug.Log (AllParticleSystems[0]);
 
 	}
 
@@ -65,11 +61,19 @@ public class ParticleController : MonoBehaviour {
 	// la couleur pourrait changer de manière smooth en n'utilisant qu'un material mais en jouant sur sa teinte
 	public void ChangeColor(string color) {
 
-		if (color == "blue") {
-			MyParticleSystem.GetComponent<ParticleSystemRenderer> ().material = materials [0];
-		} else if (color == "white") {
-			MyParticleSystem.GetComponent<ParticleSystemRenderer> ().material = materials [1];
+		GameObject[] allParticleSystems = ApplyOnAllParticles ();
+
+		Debug.Log (allParticleSystems.Length);
+
+		for (int i = 0; i < allParticleSystems.Length; i++) {
+			if (color == "blue") {
+				allParticleSystems[i].GetComponent<ParticleSystemRenderer> ().material = materials [0];
+			} else if (color == "white") {
+				allParticleSystems[i].GetComponent<ParticleSystemRenderer> ().material = materials [1];
+			}
 		}
+
+
 	}
 
 	public void IncreaseRate() {
@@ -83,12 +87,12 @@ public class ParticleController : MonoBehaviour {
 		}
 
 		if (changeColor) {
-			ChangeColor ("blue");
+			ChangeColor("blue");
 		} 
 
-		if (changeColor==false) {
-			ChangeColor("white");
-		}
+//		if (changeColor==false) {
+//			ChangeColor("white");
+//		}
 
 		if (addNewParticleSystem) {
 			AddNewParticleSystem ();
