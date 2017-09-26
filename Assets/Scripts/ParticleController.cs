@@ -23,6 +23,9 @@ public class ParticleController : MonoBehaviour {
 	private float quantity;
 
 
+
+
+
 	void Start() {
 
 	}
@@ -99,6 +102,11 @@ public class ParticleController : MonoBehaviour {
 			addNewParticleSystem = false;
 		}
 
+	
 	}
+
+
+
+	
 
 }
