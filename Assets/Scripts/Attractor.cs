@@ -9,6 +9,8 @@ public class Attractor : MonoBehaviour {
     public ParticleSystem my_system;
     public GameObject attractor;
     public GameObject[] attractors;
+
+
     public Vector3 attractorPosition;
     public float affectDistance;
 
@@ -25,7 +27,6 @@ public class Attractor : MonoBehaviour {
         // initialize particle attractor
         sqrDist = affectDistance * affectDistance;
         attractorPosition = attractor.transform.position;
-
     }
 
 
