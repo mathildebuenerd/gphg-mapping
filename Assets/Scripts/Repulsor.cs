@@ -58,13 +58,12 @@ public class Repulsor : MonoBehaviour {
             float dirX = direction.z + angle + Mathf.Cos(factor);
             float dirZ = direction.x + angle + Mathf.Sin(factor);
 
-            Vector3 newPosition = new Vector3(dirX, 0.0f, dirZ);
+            Vector3 newPosition = new Vector3(dirX, dirZ, 0.0f);
 
             my_particles[i].position = Vector3.SmoothDamp(currentPosition, newPosition, ref velocity, smoothTime);
             //my_particles[i].position += newPosition;
 
             factor += Random.Range(-0.01f, 0.01f);
-
 
         }
 
