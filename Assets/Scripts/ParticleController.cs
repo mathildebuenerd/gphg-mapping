@@ -56,7 +56,7 @@ public class ParticleController : MonoBehaviour {
 		GameObject NewParticleSystem = Instantiate (ParticleSystem0);
 		Vector3 initPosition = NewParticleSystem.transform.position;
 		initPosition.x = posX;
-		initPosition.z = posZ;
+		initPosition.y = posZ; // on a changé la zone de travail, du coup les anciennes positions Z sont maintenant les positions Y
 		NewParticleSystem.transform.position = initPosition;
 	}
 		
