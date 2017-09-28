@@ -7,8 +7,8 @@ public class ManageFlow : MonoBehaviour {
     [Range(0.0f, 50.0f)]
     public float quantite;
 
-    [Range(0.0f, 10.0f)]
-    public float diametre;
+    //[Range(0.01f, 2.0f)]
+  //  public float diametre;
 
     [Range(0.0f, 1.0f)]
     public float red;
@@ -48,6 +48,7 @@ public class ManageFlow : MonoBehaviour {
         main.startColor = new Color(red, green, blue, alpha);
         trails.colorOverTrail = new Color(redTrail, greenTrail, blueTrail, alphaTrail);
 
+        //main.startSize = diametre;
         //ps.GetComponent<Renderer>.
 
 
